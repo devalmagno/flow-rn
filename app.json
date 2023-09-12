@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "flow-rn",
-    "slug": "flow-rn",
+    "slug": "flow-podcast",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,39 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPList": {
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.FOREGROUND_SERVICE"
+      ],
+      "package": "com.devalmagno.flowpodcast"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3baa0a84-dacf-47cf-a5e2-b61499f5621b"
+      }
+    },
+    "owner": "devalmagno",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png"
+        }
+      ]
+    ]
   }
 }
